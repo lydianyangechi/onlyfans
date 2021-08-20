@@ -9,17 +9,21 @@
                     <div class="card-header">Crear un nuevo post</div>
 
                     <div class="card-body">
-                        <form action="" enctype="multipart/form-data">
+                        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group">
                                 <label for="">Imagen</label>
-                                <input type="file" class="form-control" name="" id="" aria-describedby="helpId"
+                                <input type="file" class="form-control" name="img" id="" aria-describedby="helpId"
                                     placeholder="">
                                 <small id="helpId" class="form-text text-muted">Seleciona la imagen que deseas subir</small>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                               <label for="">Descripción</label>
                               <textarea class="form-control" name="" id="" aria-describedby="helpId" rows="3"></textarea>
                               <small id="helpId" class="form-text text-muted">Escribe una breve descripción del contenido</small>
+                            </div> --}}
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Enviar" >
                             </div>
                         </form>
                     </div>

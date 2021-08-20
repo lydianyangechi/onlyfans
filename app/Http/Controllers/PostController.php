@@ -35,7 +35,26 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validación
+        $data = $request->validate([
+            'img' => 'required|image',
+            // 'description' => 'required'
+        ]);
+
+        $img = $request->file('img');
+
+        $name = time() . '.' . $img->getClientOriginalExtension();
+
+        $destiny = public_path('img');
+
+        // $route = "img/$name";
+
+        // return $route;
+
+        $request->img->move($destiny, $name);
+
+        return view('home');
+
     }
 
     /**
