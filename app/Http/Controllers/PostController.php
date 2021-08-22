@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return \view('post.index');
     }
 
     /**
@@ -53,8 +54,8 @@ class PostController extends Controller
 
         $request->img->move($destiny, $name);
 
-        return view('home');
-
+        // return view('home');
+        return redirect()->action('HomeController@index');
     }
 
     /**
@@ -88,7 +89,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        DB::table('users')
+            ->where('id', $user)
+            ->update(['status' => $status]);
     }
 
     /**
@@ -100,5 +103,15 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function checkout()
+    {
+        return \view('checkout');
+    }
+
+    public function success()
+    {
+        return \view('success');
     }
 }
