@@ -113,9 +113,9 @@
                             <div class="card-inner card-inner-lg">
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
-                                        <h4 class="nk-block-title">Sign-In</h4>
+                                        <h4 class="nk-block-title">Iniciar Sesión</h4>
                                         <div class="nk-block-des">
-                                            <p>Access the CryptoLite panel using your email and passcode.</p>
+                                            <p>Accesa al contenido ingresando tu correo y contraseña.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <div class="form-label-group">
-                                            <label class="form-label" for="default-01">Email or Username</label>
+                                            <label class="form-label" for="default-01">Correo Electrónico</label>
                                         </div>
                                         {{-- <input type="text" class="form-control form-control-lg" id="default-01"
                                             placeholder="Enter your email address or username"> --}}
@@ -139,9 +139,9 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="form-label-group">
-                                            <label class="form-label" for="password">Passcode</label>
+                                            <label class="form-label" for="password">Contraseña</label>
                                             <a class="link link-primary link-sm"
-                                                href="html/pages/auths/auth-reset-v2.html">Forgot Code?</a>
+                                                href="html/pages/auths/auth-reset-v2.html">¿Olvidé mi contraseña?</a>
                                         </div>
                                         <div class="form-control-wrap">
                                             <a href="#" class="form-icon form-icon-right passcode-switch"
@@ -163,19 +163,19 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-lg btn-primary btn-block">Sign in</button>
+                                        <button class="btn btn-lg btn-primary btn-block">Ingresar</button>
                                     </div>
                                 </form>
-                                <div class="form-note-s2 text-center pt-4"> New on our platform? <a
-                                        href="html/pages/auths/auth-register-v2.html">Create an account</a>
+                                <div class="form-note-s2 text-center pt-4">¿Eres nuevo? <a
+                                        href="html/pages/auths/auth-register-v2.html">Crea una cuenta</a>
                                 </div>
-                                <div class="text-center pt-4 pb-3">
+                                {{-- <div class="text-center pt-4 pb-3">
                                     <h6 class="overline-title overline-title-sap"><span>OR</span></h6>
                                 </div>
                                 <ul class="nav justify-center gx-4">
                                     <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">Google</a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
@@ -185,15 +185,15 @@
                                 <div class="col-lg-6 order-lg-last">
                                     <ul class="nav nav-sm justify-content-center justify-content-lg-end">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Terms & Condition</a>
+                                            <a class="nav-link" href="#">Terminos & Condiciones</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Privacy Policy</a>
+                                            <a class="nav-link" href="#">Políticas de Privacidad</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Help</a>
+                                            <a class="nav-link" href="#">Ayuda</a>
                                         </li>
-                                        <li class="nav-item dropup">
+                                        {{-- <li class="nav-item dropup">
                                             <a class="dropdown-toggle dropdown-indicator has-indicator nav-link"
                                                 data-toggle="dropdown" data-offset="0,10"><span>English</span></a>
                                             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
@@ -228,12 +228,12 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="nk-block-content text-center text-lg-left">
-                                        <p class="text-soft">&copy; 2019 CryptoLite. All Rights Reserved.</p>
+                                        <p class="text-soft">&copy; 2021 MyXclusive. Todos los derechos resevados.</p>
                                     </div>
                                 </div>
                             </div>

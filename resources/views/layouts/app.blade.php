@@ -48,11 +48,25 @@
                             <ul class="nk-menu">
 
                                 <li class="nk-menu-item">
-                                    <a href="html/index.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span>
-                                        <span class="nk-menu-text">Default</span>
+                                    <a href="{{ route('home') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-unlock"></em></span>
+                                        <span class="nk-menu-text">Contenido</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('post.create') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-upload"></em></span>
+                                        <span class="nk-menu-text">Subir Imagen</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                                {{-- <li class="nk-menu-item">
+                                    <a href="html/index.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-user-alt"></em></span>
+                                        <span class="nk-menu-text">Mi Perfil</span>
+                                    </a>
+                                </li><!-- .nk-menu-item --> --}}
 
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
@@ -78,14 +92,14 @@
                                         srcset="{{ asset('src/images/logo-dark2x.png 2x') }}" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
-                            <div class="nk-header-search ml-3 ml-xl-0">
+                            {{-- <div class="nk-header-search ml-3 ml-xl-0">
                                 <em class="icon ni ni-search"></em>
                                 <input type="text" class="form-control border-transparent form-focus-none"
                                     placeholder="Search anything">
-                            </div><!-- .nk-header-news -->
+                            </div><!-- .nk-header-news --> --}}
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
-                                    <li class="dropdown chats-dropdown hide-mb-xs">
+                                    {{-- <li class="dropdown chats-dropdown hide-mb-xs">
                                         <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-toggle="dropdown">
                                             <div class="icon-status icon-status-na"><em
                                                     class="icon ni ni-comments"></em></div>
@@ -312,7 +326,7 @@
                                                 <a href="#">View All</a>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown user-dropdown">
                                         <a href="#" class="dropdown-toggle mr-n1" data-toggle="dropdown">
                                             <div class="user-toggle">
@@ -320,7 +334,12 @@
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-xl-block">
-                                                    <div class="user-status user-status-unverified">Unverified</div>
+                                                    @if (Auth::user()->email_verified_at == 'NULL')
+                                                        <div class="user-status user-status-unverified">Unverified</div>
+                                                    @else
+                                                        <div class="user-status user-status-verified">Verified</div>
+                                                    @endif
+
                                                     <div class="user-name dropdown-indicator">
                                                         {{ Auth::user()->name }}
                                                     </div>
@@ -351,7 +370,8 @@
                                                                 class="icon ni ni-activity-alt"></em><span>Login
                                                                 Activity</span></a></li> --}}
                                                     <li><a class="dark-switch" href="#"><em
-                                                                class="icon ni ni-moon"></em><span>Dark Mode</span></a>
+                                                                class="icon ni ni-moon"></em><span>Modo
+                                                                Oscuro</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -359,8 +379,8 @@
                                                 <ul class="link-list">
                                                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><em
-                                                                class="icon ni ni-signout"></em><span>Sign
-                                                                out</span></a></li>
+                                                                class="icon ni ni-signout"></em><span>Cerrar
+                                                                Sesión</span></a></li>
                                                 </ul>
                                             </div>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -390,14 +410,14 @@
                 <div class="nk-footer">
                     <div class="container-fluid">
                         <div class="nk-footer-wrap">
-                            <div class="nk-footer-copyright"> &copy; 2020 DashLite. Template by <a
-                                    href="https://softnio.com" target="_blank">Softnio</a>
+                            <div class="nk-footer-copyright"> &copy; 2021 MyXclusive. {{-- <a
+                                    href="https://softnio.com" target="_blank">Softnio</a> --}}
                             </div>
                             <div class="nk-footer-links">
                                 <ul class="nav nav-sm">
-                                    <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Terminos</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Privacidad</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
                                 </ul>
                             </div>
                         </div>

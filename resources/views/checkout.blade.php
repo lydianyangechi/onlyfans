@@ -19,7 +19,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
     'cancel_url' => 'http://localhost/stripe/canceled.php',
     
     'payment_method_types' => ['card'],
-    'mode' => 'subscription',
+    'mode' => 'payment',
     'line_items' => [
         [
             'price' => $priceId,

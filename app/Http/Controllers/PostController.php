@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -51,6 +58,11 @@ class PostController extends Controller
         // $route = "img/$name";
 
         // return $route;
+
+        DB::table('images')->insert([
+            'user_id' => Auth::user()->id,
+            'name' => $name
+        ]);
 
         $request->img->move($destiny, $name);
 
