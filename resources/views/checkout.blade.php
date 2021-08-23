@@ -12,7 +12,8 @@ $priceId = $_POST['priceId'];
 
 $checkout_session = \Stripe\Checkout\Session::create([
     // 'success_url' => 'http://127.0.0.1:8000/success/?session_id={CHECKOUT_SESSION_ID}',
-    'success_url' => 'http://127.0.0.1:8000/success/?status=activo',
+    // 'success_url' => 'http://127.0.0.1:8000/success/?status=activo',
+    'success_url' => 'http://127.0.0.1:8000/success/?session_id={CHECKOUT_SESSION_ID}&status=activo',
     // 'cancel_url' => 'http://localhost/stripe/canceled.php',
 
     // 'success_url' => "{{ route('success') }}",

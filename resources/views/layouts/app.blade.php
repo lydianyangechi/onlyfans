@@ -334,7 +334,7 @@
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-xl-block">
-                                                    @if (Auth::user()->email_verified_at == 'NULL')
+                                                    @if (Auth::user()->email_verified_at == NULL)
                                                         <div class="user-status user-status-unverified">Unverified</div>
                                                     @else
                                                         <div class="user-status user-status-verified">Verified</div>

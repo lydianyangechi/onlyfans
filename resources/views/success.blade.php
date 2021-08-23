@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\DB;
 
 $status = $_GET['status'];
+$session = $_GET['session_id'];
 $user = Auth::user()->id;
 
 DB::table('users')
@@ -14,8 +15,12 @@ DB::table('users')
 
 @section('content')
     <div class="container">
-        <h1>Gracias, Morro! Besos, chau!</h1>
-        {{ $status }}
-        {{ $user }}
+        <div class="card">
+            <div class="card-body text-center">
+                <h1 class="my-3 text-center">¡Gracias, {{ Auth::user()->name }}!, tu suscripción se activo correctamente.
+                </h1>
+                <h4>{{ $session }}</h3>
+            </div>
+        </div>
     </div>
 @endsection
